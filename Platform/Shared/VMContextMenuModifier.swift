@@ -22,6 +22,9 @@ struct VMContextMenuModifier: ViewModifier {
     @State private var showSharePopup = false
     @State private var confirmAction: ConfirmAction?
     @State private var shareItem: VMShareItemModifier.ShareItem?
+    #if os(macOS)
+    @State private var showSnapshotsSheet = false
+    #endif
     
     func body(content: Content) -> some View {
         #if os(macOS)
@@ -59,6 +62,11 @@ struct VMContextMenuModifier: ViewModifier {
             } label: {
                 Label("Show in Finder", systemImage: "folder")
             }.help("Reveal where the VM is stored.")
+            Button {
+                showSnapshotsSheet = true
+            } label: {
+                Label("Snapshots…", systemImage: "camera.on.rectangle")
+            }.help("Manage snapshots for this VM.")
             Divider()
             #endif
             #if !WITH_REMOTE // FIXME: implement remote feature
@@ -175,5 +183,24 @@ struct VMContextMenuModifier: ViewModifier {
                 showSharePopup.toggle()
             }
         })
+        #if os(macOS)
+        .sheet(isPresented: $showSnapshotsSheet) {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Snapshots — \(vm.detailsTitleLabel)")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .padding([.top, .horizontal])
+                VMSnapshotsView(vm: vm)
+                    .environmentObject(data)
+                    .padding(.horizontal)
+                HStack {
+                    Spacer()
+                    Button("Done") { showSnapshotsSheet = false }
+                        .keyboardShortcut(.defaultAction)
+                }.padding()
+            }
+            .frame(minWidth: 400, minHeight: 300)
+        }
+        #endif
     }
 }

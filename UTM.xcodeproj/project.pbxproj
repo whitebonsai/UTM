@@ -1289,6 +1289,8 @@
 		FFB02A90266CB09C006CD71A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFB02A8E266CB09C006CD71A /* InfoPlist.strings */; };
 		FFB02A93266CB09C006CD71A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFB02A91266CB09C006CD71A /* InfoPlist.strings */; };
 		FFB02A96266CB09C006CD71A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFB02A94266CB09C006CD71A /* Localizable.strings */; };
+		LZVMSNAP0000000000000003 /* VMSnapshotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = LZVMSNAP0000000000000001 /* VMSnapshotManager.swift */; };
+		LZVMSNAP0000000000000004 /* VMSnapshotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = LZVMSNAP0000000000000002 /* VMSnapshotsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2203,6 +2205,8 @@
 		FFB02A8F266CB09C006CD71A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		FFB02A92266CB09C006CD71A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		FFB02A95266CB09C006CD71A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		LZVMSNAP0000000000000001 /* VMSnapshotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMSnapshotManager.swift; sourceTree = "<group>"; };
+		LZVMSNAP0000000000000002 /* VMSnapshotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMSnapshotsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2781,6 +2785,8 @@
 				CEC0A3092A7490D200980857 /* VMConfigQEMUArgumentsView.swift */,
 				84A381A9268CB30C0048EE4D /* VMDrivesSettingsView.swift */,
 				CE928C3026ACCDEA0099F293 /* VMAppleRemovableDrivesView.swift */,
+				LZVMSNAP0000000000000001 /* VMSnapshotManager.swift */,
+				LZVMSNAP0000000000000002 /* VMSnapshotsView.swift */,
 				84C584E4268F8C65000FCABF /* VMAppleSettingsView.swift */,
 				845F1706289B5E2600944904 /* VMAppleSettingsAddDeviceMenuView.swift */,
 				846F8D572E3850620037162B /* VMKeyboardShortcutsView.swift */,
@@ -3909,6 +3915,8 @@
 				CED814EA24C79F070042F0F1 /* VMConfigDriveCreateView.swift in Sources */,
 				848A98B2286A0FDE006F0550 /* UTMAppleConfigurationSystem.swift in Sources */,
 				CE928C3126ACCDEA0099F293 /* VMAppleRemovableDrivesView.swift in Sources */,
+				LZVMSNAP0000000000000003 /* VMSnapshotManager.swift in Sources */,
+				LZVMSNAP0000000000000004 /* VMSnapshotsView.swift in Sources */,
 				841619A8284315C1000034B2 /* UTMQemuConfiguration.swift in Sources */,
 				83C15C5F26CC441500ADFD45 /* KeyCodeMap.swift in Sources */,
 				84C505AE28C588EC007CE8FF /* SizeTextField.swift in Sources */,
@@ -4720,6 +4728,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(IOS_CODE_SIGN_ENTITLEMENTS)";
 				CODE_SIGN_IDENTITY = "$(CODE_SIGN_IDENTITY_IOS:default=Apple Development)";
 				CODE_SIGN_STYLE = "$(CODE_SIGN_STYLE_IOS:default=)";
+				DEVELOPMENT_TEAM = 3VZJKVS9RS;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4758,6 +4767,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(IOS_CODE_SIGN_ENTITLEMENTS)";
 				CODE_SIGN_IDENTITY = "$(CODE_SIGN_IDENTITY_IOS:default=Apple Development)";
 				CODE_SIGN_STYLE = "$(CODE_SIGN_STYLE_IOS:default=)";
+				DEVELOPMENT_TEAM = 3VZJKVS9RS;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (

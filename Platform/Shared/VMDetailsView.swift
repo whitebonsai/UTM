@@ -72,6 +72,8 @@ struct VMDetailsView: View {
                         VMRemovableDrivesView(vm: vm, config: qemuVM.config)
                             .padding([.leading, .trailing, .bottom])
                     }
+                    VMSnapshotsSectionView(vm: vm)
+                        .padding([.leading, .trailing, .bottom])
                     #else
                     let qemuConfig = vm.config as! UTMQemuConfiguration
                     VMRemovableDrivesView(vm: vm, config: qemuConfig)
@@ -91,6 +93,7 @@ struct VMDetailsView: View {
                         } else if let qemuVM = vm.wrapped as? UTMQemuVirtualMachine {
                             VMRemovableDrivesView(vm: vm, config: qemuVM.config)
                         }
+                        VMSnapshotsSectionView(vm: vm)
                         #else
                         let qemuConfig = vm.config as! UTMQemuConfiguration
                         VMRemovableDrivesView(vm: vm, config: qemuConfig)
