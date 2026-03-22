@@ -195,6 +195,9 @@ jobs:
         shell: bash
         run: |
           [[ "$(xcode-select -p)" == "${{ env.BUILD_XCODE_PATH }}"* ]] || sudo xcode-select -s "${{ env.BUILD_XCODE_PATH }}"
+      - name: Install Python Dependencies
+        run: |
+          pip3 install --break-system-packages --user six pyparsing pyyaml setuptools distlib mako
       - name: Build UTM
         run: |
           ./scripts/build_utm.sh -k ${{ matrix.configuration.sdk }} -s ${{ matrix.configuration.scheme }} -a ${{ matrix.configuration.arch }} -o UTM
